@@ -1,0 +1,11 @@
+.link {
+    font-weight: bold;
+    color: #6B5520; /* rich dark brown, same as entryTitle */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .link:hover {
+    color: #3B3B3B; /* soft charcoal for hover */
+  }
+  

@@ -1,0 +1,14 @@
+.page {
+  background-color: #D4BE86;
+  height:100vh
+}
+
+.mainContent {
+  align-items:center;
+  text-align:center;
+  padding:1rem;
+}
+
+.a {
+  font-weight:bold;
+}

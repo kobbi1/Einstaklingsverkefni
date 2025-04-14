@@ -1,0 +1,45 @@
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Adds nice spacing between entries */
+    width: 100%;
+    max-width: 800px;
+}
+
+.content {
+    border: 1px solid #BCA76B;
+    border-radius: 12px;
+    background-color: #F9F5E3;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #3B3B3B;
+    padding: 1.5rem;
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.entryTitle {
+    color: #6B5520;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.pageTitle {
+    color: #3B3B3B;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}

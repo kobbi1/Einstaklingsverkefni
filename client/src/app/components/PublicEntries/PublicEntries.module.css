@@ -1,0 +1,84 @@
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 800px;
+}
+
+.pageTitle {
+    color: #3B3B3B;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #BCA76B;
+    border-radius: 12px;
+    background-color: #F9F5E3;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #3B3B3B;
+
+    padding: 1.5rem 2rem;
+    width: 100%;
+    max-width: 700px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.entryTitle {
+    color: #6B5520;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.givePointButton,
+.removePointButton {
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    margin: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    color: #fff;
+}
+
+.givePointButton {
+    background-color: #4CAF50; /* friendly green */
+}
+
+.givePointButton:hover {
+    background-color: #45a049;
+    transform: scale(1.03);
+}
+
+.removePointButton {
+    background-color: #D32F2F; /* strong red */
+}
+
+.removePointButton:hover {
+    background-color: #b71c1c;
+    transform: scale(1.03);
+}

@@ -1,0 +1,69 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #F9F5E3;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #3B3B3B;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #6B5520;
+}
+
+.input,
+.textarea {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #BCA76B;
+  border-radius: 8px;
+  background-color: #fffaf0;
+  color: #3B3B3B;
+}
+
+.textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #6B5520;
+}
+
+.button {
+  padding: 0.75rem;
+  font-weight: bold;
+  background-color: #6B8E23;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #5c7c1e;
+  transform: scale(1.02);
+}
+
+.message {
+  font-weight: bold;
+  color: #6B5520;
+  text-align: center;
+}

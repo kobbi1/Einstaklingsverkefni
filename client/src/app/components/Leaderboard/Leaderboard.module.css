@@ -1,0 +1,53 @@
+.board {
+    background-color: #F9F5E3; /* soft cream */
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .board h2 {
+    color: #6B5520;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .user {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fffaf0;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+  
+  .user:hover {
+    transform: scale(1.02);
+  }
+  
+  .user:nth-child(1) {
+    background-color: #ffd70044; /* gold-ish highlight */
+    font-weight: bold;
+  }
+  
+  .user:nth-child(2) {
+    background-color: #c0c0c044; /* silver-ish */
+  }
+  
+  .user:nth-child(3) {
+    background-color: #cd7f3244; /* bronze-ish */
+  }
+  
