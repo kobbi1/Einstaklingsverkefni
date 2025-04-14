@@ -10,24 +10,26 @@ import pgSession from "connect-pg-simple";
 const app = express();
 const PORT = process.env.PORT || 3000
 
+app.set("trust proxy", 1);
+
 const allowedOrigins = [
     "http://localhost:3000",
     "https://einstaklingsverkefni-95p0.onrender.com",
     "https://einstaklingsverkefni-six.vercel.app"
   ];  
 
-  app.use(
-    cors({
-      origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error("Not allowed by CORS"));
-        }
-      },
-      credentials: true,
-    })
-  );
+app.use(
+cors({
+    origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+    } else {
+        callback(new Error("Not allowed by CORS"));
+    }
+    },
+    credentials: true,
+})
+);
   
 
 app.options("*", cors())
