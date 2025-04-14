@@ -86,24 +86,7 @@ export class DiaryApi {
 
     async getMyProfile(): Promise<UserProfile | null> {
         const url = BASE_URL + `/my-profile`;
-      
-        try {
-          const response = await fetch(url, {
-            method: "GET",
-            credentials: "include",
-          });
-      
-          if (!response.ok) {
-            console.warn("getMyProfile failed with status:", response.status);
-            return null;
-          }
-      
-          const data = await response.json();
-          return data as UserProfile;
-        } catch (err) {
-          console.error("Error fetching my profile:", err);
-          return null;
-        }
+        return this.fetchFromApi<UserProfile | null>(url);
       }
       
 
