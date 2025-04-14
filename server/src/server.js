@@ -5,6 +5,7 @@ import authRoutes from "./routes/auth.js";
 import entriesRoutes from "./routes/entries.js";
 import leaderboardRoutes from "./routes/leaderboard.js";
 import pool from "./db/db.js";
+import pgSession from "connect-pg-simple";
 
 const app = express();
 const PORT = process.env.PORT || 3000
@@ -25,8 +26,14 @@ app.options("*", cors())
 
 app.use(express.json());
 
+const PgSession = pgSession(session);
+
 app.use(
     session({
+      store: new PgSession({
+        pool: pool,
+        tableName: "session",
+      }),
       secret: process.env.SESSION_SECRET || "ekki-mcdonalds-a-islandi",
       resave: false,
       saveUninitialized: false,
@@ -34,7 +41,7 @@ app.use(
         secure: process.env.NODE_ENV === "production",
         httpOnly: true,
         sameSite: "lax",
-      }
+      },
     })
   );
 
