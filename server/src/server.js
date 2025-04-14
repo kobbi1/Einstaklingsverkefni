@@ -9,9 +9,14 @@ import pool from "./db/db.js";
 const app = express();
 const PORT = process.env.PORT || 3000
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://einstaklingsverkefni-95p0.onrender.com"
+  ];
+
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: allowedOrigins,
         credentials: true,
     })
 );
@@ -26,7 +31,7 @@ app.use(
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: false,
+        secure: process.env.NODE_ENV === "production",
         httpOnly: true,
         sameSite: "lax",
       }
