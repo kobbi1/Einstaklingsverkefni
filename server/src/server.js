@@ -13,17 +13,22 @@ const PORT = process.env.PORT || 3000
 const allowedOrigins = [
     "http://localhost:3000",
     "https://einstaklingsverkefni-95p0.onrender.com",
-    "https://einstaklingsverkefni-95p0.onrender.com/",
-    "https://einstaklingsverkefni-six.vercel.app",
-    "https://einstaklingsverkefni-six.vercel.app/"
-  ];
+    "https://einstaklingsverkefni-six.vercel.app"
+  ];  
 
-app.use(
+  app.use(
     cors({
-        origin: allowedOrigins,
-        credentials: true,
+      origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error("Not allowed by CORS"));
+        }
+      },
+      credentials: true,
     })
-);
+  );
+  
 
 app.options("*", cors())
 
