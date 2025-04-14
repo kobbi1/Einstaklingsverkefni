@@ -40,7 +40,7 @@ export default function Leaderboard({ title }: Props) {
 
       {uiState === "data" && (
         <ol className={styles.list}>
-          {users.map((user, index) => (
+          {users.map((user) => (
             <li key={user.id} className={styles.user}>
               <span>{user.username} </span>
               <span>{user.points} stig</span>

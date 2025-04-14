@@ -1,6 +1,6 @@
 import { TheLeaderboard, UserProfile, Entry, PublicEntry } from "./types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3001";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://einstaklingsverkefni-95p0.onrender.com";
 
 export class DiaryApi {
     async fetchFromApi<T>(url: string): Promise<T | null> {  
