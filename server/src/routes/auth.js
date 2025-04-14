@@ -31,25 +31,34 @@ router.post("/login", async (req, res) => {
     const user = result.rows[0];
 
     if (!user) {
-      res.status(400).json({ error: "Invalid username or password" });
-      return
+      return res.status(400).json({ error: "Invalid username or password" });
     }
-    
+
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      res.status(400).json({ error: "Invalid username or password" });
-      return
-    } 
+      return res.status(400).json({ error: "Invalid username or password" });
+    }
 
+    // Store user ID in session
     // @ts-ignore
     req.session.userId = user.id;
 
-    res.json({ message: "Logged in" });
+    // Ensure session is saved before responding
+    req.session.save((err) => {
+      if (err) {
+        console.error("Session save error:", err);
+        return res.status(500).json({ error: "Could not save session" });
+      }
+
+      res.json({ message: "Logged in" });
+    });
+
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Login error" });
   }
 });
+
 
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
