@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 3000
 
 const allowedOrigins = [
     "http://localhost:3000",
-    "https://einstaklingsverkefni-95p0.onrender.com"
+    "https://einstaklingsverkefni-95p0.onrender.com",
+    "https://einstaklingsverkefni-six.vercel.app"
   ];
 
 app.use(
