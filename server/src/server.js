@@ -40,7 +40,7 @@ app.use(
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: process.env.NODE_ENV === "production",
+        secure: true,
         httpOnly: true,
         sameSite: "lax",
       },
@@ -65,6 +65,8 @@ app.get("/", async (req, res) => {
 app.get("/my-profile", async (req, res) => {
     // @ts-ignore
     const userId = req.session.userId;
+
+    console.log("SESSION DEBUG:", req.session); // 
 
     if (!userId) {
         res.status(401).json({ error: "Not logged in" });
